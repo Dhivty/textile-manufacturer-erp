@@ -5,7 +5,8 @@ require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const materialRoutes = require("./routes/materialRoutes");
 const jobRoutes = require("./routes/jobroutes");
-
+const productionRoutes = require("./routes/productionRoutes");
+const invoiceRoutes = require("./routes/invoiceRoutes");
 const app = express();
 
 // Middlewares
@@ -16,7 +17,8 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/materials", materialRoutes);
 app.use("/api", jobRoutes);
-
+app.use("/api/production", productionRoutes);
+app.use("/api/invoice", invoiceRoutes);
 // Test Routes
 app.get("/", (req, res) => {
   res.send("Textile ERP Backend Running");
