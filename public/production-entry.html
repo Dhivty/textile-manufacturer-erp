@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<script src="/js/auth.js"></script>
+<script src="/js/navbar.js"></script>
+
+<script>
+protectPage(["supervisor", "worker"]);
+</script>
+
+<div class="container">
+    <h2>Production Entry</h2>
+
+    <p>
+        <label>Job<br>
+            <select id="job" style="min-width:16rem">
+                <option value="">— Select job —</option>
+            </select>
+        </label>
+    </p>
+    <p>
+        <label>Quantity completed<br>
+            <input id="qty" type="number" min="1" step="1" placeholder="Quantity">
+        </label>
+    </p>
+
+    <button type="button" onclick="submitProd()">Submit</button>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/production-entry.js"></script>
+
+</body>
+</html>

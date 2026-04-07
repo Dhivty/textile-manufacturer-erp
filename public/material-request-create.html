@@ -1,0 +1,35 @@
+<head>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<script src="/js/auth.js"></script>
+<script src="/js/navbar.js"></script>
+<script>
+protectPage(["supervisor"]);
+</script>
+
+<div class="container">
+    <h2>Create Material Request</h2>
+
+    <form id="request-form">
+        <select id="job_id" required>
+            <option value="">-- Select Job --</option>
+        </select><br><br>
+
+        <select id="material_id" required onchange="handleMaterialChange()">
+            <option value="">-- Select Material --</option>
+            <option value="other">Other (New Material)</option>
+        </select><br><br>
+        <input type="text" id="new_material_name" placeholder="Enter new material name" style="display:none;"><br><br>
+        <input type="number" id="quantity" placeholder="Quantity" required><br><br>
+
+        <button type="submit">Send Request</button>
+    </form>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/material-request-create.js"></script>
+
+</body>

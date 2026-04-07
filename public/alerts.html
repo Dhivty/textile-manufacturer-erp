@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/style.css">
+<style>
+.alert-card {
+    background: #fff;
+    border-left: 6px solid red;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<script src="/js/auth.js"></script>
+<script src="/js/navbar.js"></script>
+
+<script>
+protectPage(["manufacturer"]);
+</script>
+
+<div class="container">
+
+<h2>Stock Alerts</h2>
+
+<div id="alerts"></div>
+
+</div>
+
+<script src="/js/api.js"></script>
+
+<script>
+async function loadAlerts() {
+    const data = await apiRequest("GET", "/materials/low-stock");
+    const div = document.getElementById("alerts");
+
+    if (!data.length) {
+        div.innerHTML = "<p>No alerts</p>";
+        return;
+    }
+
+    div.innerHTML = data.map(m => `
+        <div class="alert-card">
+            <h3>${m.material_name}</h3>
+            <p>Available: ${m.quantity_available}</p>
+            <p>Threshold: ${m.threshold}</p>
+        </div>
+    `).join("");
+}
+
+loadAlerts();
+</script>
+
+</body>
+</html>

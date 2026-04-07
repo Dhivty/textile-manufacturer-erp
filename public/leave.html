@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/style.css">
+
+<style>
+.form-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+}
+
+textarea {
+    height: 80px;
+}
+
+button {
+    padding: 8px 12px;
+}
+</style>
+
+</head>
+
+<body>
+
+<script src="/js/auth.js"></script>
+<script src="/js/navbar.js"></script>
+
+<script>
+protectPage(["worker","supervisor"]);
+</script>
+
+<div class="container">
+
+<h2>Apply Leave</h2>
+
+<!-- FORM -->
+<div class="form-card">
+<form id="leave-form">
+
+    <div class="form-group">
+        <label>From Date</label>
+        <input type="date" id="from_date" required>
+    </div>
+
+    <div class="form-group">
+        <label>To Date</label>
+        <input type="date" id="to_date" required>
+    </div>
+
+    <div class="form-group">
+        <label>Reason</label>
+        <textarea id="reason" placeholder="Enter reason"></textarea>
+    </div>
+
+    <button type="submit">Apply Leave</button>
+
+</form>
+</div>
+
+<!-- HISTORY -->
+<h3>My Leave Requests</h3>
+
+<table class="styled-table">
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th>Reason</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody id="leave-history"></tbody>
+
+</table>
+
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/leave.js"></script>
+
+</body>
+</html>

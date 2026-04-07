@@ -1,0 +1,40 @@
+<head>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<script src="/js/auth.js"></script>
+<script src="/js/navbar.js"></script>
+<script>
+protectPage(["manufacturer"]);
+</script>
+
+<div class="container">
+    <h2>Jobs</h2>
+
+    <p>
+        <button type="button" onclick="setJobTab('Pending')">Pending</button>
+        <button type="button" onclick="setJobTab('In Production')">In Production</button>
+        <button type="button" onclick="setJobTab('Pending Verification')">Pending Verification</button>
+        <button type="button" onclick="setJobTab('Completed')">Completed</button>
+        <button type="button" onclick="setJobTab('Invoiced')">Invoiced</button>
+    </p>
+
+    <table id="job-table" border="1" width="100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Client</th>
+                <th>Design</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/jobs.js"></script>
+
+</body>

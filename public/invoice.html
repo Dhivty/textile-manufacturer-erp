@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Invoices</title>
+<link rel="stylesheet" href="/css/style.css">
+<style>
+.input-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 8px;
+    flex: 1;
+}
+
+button {
+    padding: 8px 12px;
+}
+</style>
+</head>
+
+<body>
+
+<script src="/js/auth.js"></script>
+<script src="/js/navbar.js"></script>
+
+<script>
+protectPage(["manufacturer"]);
+</script>
+
+<div class="container">
+
+<h2>Invoice Management</h2>
+
+<div class="input-box">
+    <input id="jobId" placeholder="Enter Job ID">
+    <button onclick="preview()">Preview</button>
+    <button onclick="generate()">Generate</button>
+</div>
+
+<div id="previewBox"></div>
+
+<h3>All Invoices</h3>
+
+<table class="styled-table">
+<thead>
+<tr>
+<th>Job ID</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody id="list"></tbody>
+</table>
+
+</div>
+
+<script src="/js/invoice.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/style.css">
+<style>
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card h3 {
+    margin: 0;
+    color: #333;
+}
+
+.card p {
+    font-size: 18px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<script src="/js/auth.js"></script>
+<script src="/js/navbar.js"></script>
+
+<script>
+protectPage(["manufacturer"]);
+</script>
+
+<div class="container">
+
+<h2>Management Dashboard</h2>
+
+<!-- CARDS -->
+<div class="cards">
+    <div class="card"><h3>Total Jobs</h3><p id="total-jobs"></p></div>
+    <div class="card"><h3>Pending</h3><p id="pending-jobs"></p></div>
+    <div class="card"><h3>Pending verification</h3><p id="pending-verification"></p></div>
+    <div class="card"><h3>In production</h3><p id="in-production"></p></div>
+    <div class="card"><h3>Completed</h3><p id="completed-jobs"></p></div>
+    <div class="card"><h3>Yarn (stock)</h3><p id="total-yarn"></p></div>
+    <div class="card"><h3>Verified output (this month)</h3><p id="total-production-month"></p></div>
+    <div class="card"><h3>Revenue</h3><p id="revenue-generated"></p></div>
+</div>
+
+<!-- TABLE -->
+<h3>Production Progress</h3>
+<table class="styled-table">
+<thead>
+<tr>
+<th>Job ID</th>
+<th>Client</th>
+<th>Design</th>
+<th>Target</th>
+<th>Verified done</th>
+<th>Progress</th>
+</tr>
+</thead>
+<tbody id="progress-table"></tbody>
+</table>
+
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/management-dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<head>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<script src="/js/auth.js"></script>
+<script src="/js/navbar.js"></script>
+<script>
+protectPage(["supervisor"]);
+</script>
+
+<div class="container">
+    <h1>Supervisor Dashboard</h1>
+
+    <h3>Pending Jobs</h3>
+    <table border="1" width="100%" id="new-jobs-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Client</th>
+                <th>Design</th>
+                <th>Target</th>
+                <th>Workers</th>
+                <th>Per-worker qty</th>
+                <th>Material</th>
+                <th>Required Qty</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h3>Verify Production Entries</h3>
+    <table border="1" width="100%" id="production-verify-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Job</th>
+                <th>Client / Design</th>
+                <th>Qty</th>
+                <th>Worker</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h3>Pending Verification</h3>
+    <table border="1" width="100%" id="verify-jobs-table">
+        <thead>
+            <tr>
+                <th>Verify</th>
+                <th>ID</th>
+                <th>Client</th>
+                <th>Design</th>
+                <th>Remarks</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h3>My Material Requests</h3>
+    <p>
+        <label>Filter:
+            <select id="supervisor-mr-filter">
+                <option value="all">All</option>
+                <option value="pending">Pending</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+            </select>
+        </label>
+    </p>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Job</th>
+                <th>Material</th>
+                <th>Quantity</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="supervisor-request-table"></tbody>
+    </table>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/supervisor-dashboard.js"></script>
+
+</body>

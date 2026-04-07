@@ -1,0 +1,59 @@
+{
+  "jobs": [
+    {
+      "job_id": 1,
+      "client_name": "Sri textile",
+      "design_name": "kathambari",
+      "saree_count": 100,
+      "deadline": "2026-04-14T18:30:00.000Z",
+      "status": "In Production",
+      "created_at": "2026-03-31T14:35:21.000Z",
+      "loom_number": null,
+      "worker_name": null,
+      "issue_number": null
+    },
+    {
+      "job_id": 2,
+      "client_name": "Royal Fabrics",
+      "design_name": "Temple border",
+      "saree_count": 200,
+      "deadline": "2026-04-21T18:30:00.000Z",
+      "status": "Invoiced",
+      "created_at": "2026-03-31T14:49:09.000Z",
+      "loom_number": null,
+      "worker_name": null,
+      "issue_number": null
+    },
+    {
+      "job_id": 3,
+      "client_name": "Sairam tex",
+      "design_name": "Cotton Simple",
+      "saree_count": 35,
+      "deadline": "2026-04-12T18:30:00.000Z",
+      "status": "In Production",
+      "created_at": "2026-04-04T16:50:58.000Z",
+      "loom_number": null,
+      "worker_name": null,
+      "issue_number": null
+    }
+  ],
+  "mi": [],
+  "rm": [
+    {
+      "material_id": 1,
+      "yarn_type": "silk",
+      "quantity_received": "500.00",
+      "quantity_available": "300.00",
+      "created_at": "2026-03-28T09:35:50.000Z",
+      "threshold": "100.00"
+    },
+    {
+      "material_id": 4,
+      "yarn_type": "Cotton",
+      "quantity_received": "320.00",
+      "quantity_available": "320.00",
+      "created_at": "2026-04-05T16:49:21.000Z",
+      "threshold": "50.00"
+    }
+  ]
+}

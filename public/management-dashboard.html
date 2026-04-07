@@ -1,0 +1,80 @@
+<head>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<script src="/js/auth.js"></script>
+<script src="/js/navbar.js"></script>
+<script>
+protectPage(["manufacturer"]);
+</script>
+
+<div class="container">
+    <h2>Management Dashboard</h2>
+
+    <p id="total-jobs"></p>
+    <p id="pending-jobs"></p>
+    <p id="pending-verification"></p>
+    <p id="in-production"></p>
+    <p id="completed-jobs"></p>
+    <p id="total-yarn"></p>
+    <p id="total-production-month"></p>
+    <p id="revenue-generated"></p>
+
+    <h3>Production progress</h3>
+    <table border="1" width="100%" id="progress-table">
+        <thead>
+            <tr>
+                <th>Job ID</th>
+                <th>Target (sarees)</th>
+                <th>Total done</th>
+                <th>Progress %</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h3>Material requests</h3>
+    <p>
+        <label>Filter:
+            <select id="dash-mr-filter">
+                <option value="all">All</option>
+                <option value="pending">Pending</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+            </select>
+        </label>
+    </p>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Job</th>
+                <th>Material</th>
+                <th>Quantity</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="dash-material-requests"></tbody>
+    </table>
+    <h3>Leave requests</h3>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="dash-leave-requests"></tbody>
+    </table>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/management-dashboard.js"></script>
+
+</body>

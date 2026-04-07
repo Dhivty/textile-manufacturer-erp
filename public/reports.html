@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reports</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        .report-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .report-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .report-title {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .revenue-box {
+    background: white;
+    color: black;
+    border: 1px solid #ddd;
+}
+    </style>
+</head>
+
+<body>
+
+<script src="/js/auth.js"></script>
+<script src="/js/navbar.js"></script>
+
+<script>
+protectPage(["manufacturer"]);
+</script>
+
+<div class="container">
+
+<h2>Reports & Analytics</h2>
+
+<div class="report-grid">
+
+    <!-- STATUS -->
+    <div class="report-card">
+        <div class="report-title">Job Status</div>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <tbody id="status-table"></tbody>
+        </table>
+    </div>
+
+    <!-- CLIENTS -->
+    <div class="report-card">
+        <div class="report-title">Top Clients</div>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Client</th>
+                    <th>Orders</th>
+                </tr>
+            </thead>
+            <tbody id="clients-table"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- REVENUE -->
+<div style="margin-top:20px;">
+    <div class="revenue-box" id="revenue-box"></div>
+</div>
+
+</div>
+
+<script src="/js/reports.js"></script>
+
+</body>
+</html>
