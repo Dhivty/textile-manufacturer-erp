@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
@@ -77,3 +78,6 @@ ensureSchema()
         console.error("ensureSchema failed:", err);
         process.exit(1);
     });
+=======
+
+>>>>>>> 6f639ae5eac4d089096811984f87aaa795b6b7c6
